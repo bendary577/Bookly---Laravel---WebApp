@@ -1,0 +1,25 @@
+
+
+.homeview {
+    background-image: linear-gradient(to bottom, rgba(2,0,36,0.6) 0%, rgba(118,118,179,0.6) 0%, rgba(84,145,201,0.6) 0%, rgba(109,193,146,0.6) 26%, rgba(71,200,184,0.6) 44%, rgba(60,202,195,0.6) 59%, rgba(52,203,203,0.6) 74%, rgba(0,212,255,0.6) 100%),
+                      url('../imgs/homeviewBackground.jpg');
+    background-position : right top;
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height:100vh;
+    position : relative;
+
+}
+
+
+.hvchild{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+
