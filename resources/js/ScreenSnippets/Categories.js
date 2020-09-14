@@ -1,29 +1,53 @@
-import React from 'react';
+import React from "react";
+import "../../css/categories.css";
+import { Link } from "react-router-dom";
 
+const Categories = () => {
+    return (
+        <div className="categories px-5 py-5 ">
+            {/*---------------------- start -------------------------- */}
 
-const AboutUs = () => {
-    return (    
-        <div className="container">  
-            <div className="row"> </div>
+            <div className="text-center my-5">
+                <h3>Categories</h3>
+                <h3 className="mt-4">
+                    Browse more than 100,000 books in a wide variety of
+                    categories
+                </h3>
+            </div>
 
-            {/*---------------------- left section -------------------------- */}
-                <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <h3 className="text-left font-weight-bold text-body">Who Are We ?</h3>
-
-                    <p className="text-left text-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley</p>
-
+            <div className="grid">
+                <div className="history">
+                    <a href="#">History</a>
                 </div>
-
-             {/*---------------------- right section ------------------------ */}
-
-                <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <img src="./imgs/img.jpg"></img>
+                <div className="computerScience">
+                    <a href="#">Computer Science</a>
                 </div>
-             
+                <div className="midicine">
+                    <a href="#">Medicine</a>
+                </div>
+                <div className="economy">
+                    <a href="#">Economy</a>
+                </div>
+                <div className="engineering">
+                    <a href="#">Engineering</a>
+                </div>
+                <div className="science">
+                    <a href="#">Science</a>
+                </div>
+                <div className="religion">
+                    <a href="#">Religion</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <Link to="/categories">
+                    <button type="button" class="btn btn-primary">
+                        Browse All Categories
+                    </button>
+                </Link>
+            </div>
         </div>
-    ) 
-}
+    );
+};
 
-export default AboutUs;
+export default Categories;

@@ -1,19 +1,25 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import HomeView from "../ScreenSnippets/HomeView";
+import AboutUs from "../ScreenSnippets/AboutUs";
+import Categories from "../ScreenSnippets/Categories";
+import ContactUs from "../ScreenSnippets/ContactUs";
+import Footer from "../components/Footer";
+import Customers from "../ScreenSnippets/Customers";
 
 class Home extends Component {
-
-    render(){
-        return(
-            <nav className='navbar navbar-expand-md navbar-light '>
-                 <div className='container'>
-                      <Link className='navbar-brand' to='/Signup'>ClickHere</Link>
-                </div>
-            </nav>
-        )
+    render() {
+        return (
+            <div>
+                <HomeView />
+                <AboutUs />
+                <Categories />
+                <Customers />
+                <ContactUs />
+                <Footer />
+            </div>
+        );
     }
-
 }
 
 export default Home;

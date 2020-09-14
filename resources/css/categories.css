@@ -1,0 +1,88 @@
+.categories {
+    height: 1000px;
+}
+
+.categories .grid {
+    width: 80%;
+    height: 600px;
+    margin-top: 50px;
+    margin: auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+        "history computerScience computerScience computerScience"
+        "history midicine economy2 economy2"
+        "history engineering engineering science "
+        "religion religion religion science";
+}
+
+.grid > div {
+    background-color: rgba(196, 31, 31, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid > div:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 30px 2px black;
+    border: 2px solid black;
+}
+
+.grid > div a {
+    text-decoration: none;
+    color: white;
+}
+
+.grid > div a:hover {
+    color: yellow;
+}
+
+.history {
+    grid-area: history;
+    background-image: url(../imgs/napoleon2.jpg);
+    background-position: top;
+}
+
+.computerScience {
+    grid-area: computerScience;
+    background-image: url(../imgs/computerScience2.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+.midicine {
+    grid-area: midicine;
+    background-image: url(../imgs/medicine2.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+.economy {
+    grid-area: economy2;
+    background-image: url(../imgs/economy2.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+.engineering {
+    grid-area: engineering;
+    background-image: url(../imgs/engineernig2.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+.science {
+    grid-area: science;
+    background-image: url(../imgs/science2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.religion {
+    grid-area: religion;
+    background-image: url(../imgs/religion2.jpg);
+    background-position: center;
+    background-size: cover;
+}

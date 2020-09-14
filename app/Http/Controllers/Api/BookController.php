@@ -20,7 +20,6 @@ class BookController extends Controller
         public function index(){
             
             $books = Book::all();
-           // return response()->json($books);
             return $this -> returnData('books',$books);
         }   
 
@@ -49,17 +48,35 @@ class BookController extends Controller
 
         //--------------------------------------------------------------------------------
 
-        public function show($id){
+        public function showByID($id){
                 $book = Book::findOrFail($id);
-                return $book->toJson();
+                return $this -> returnData('book',$book);
         }
 
         //--------------------------------------------------------------------------------
 
         public function showByCategory($category){
+            $books = Book::with(['categories' => function ($query) {
+                $query->where('categoryName', $category);
+            }])->get();
+            return $this -> returnData('books',$books);
+        }
+
+        //-------------------------------------------------------------------------------
+          /*
+
+        public function showByCategory($category){
             $category_id = Category::where('categoryName', $category)->select('id')->limit(1)->get();
             $books = Book::where('category_id', $category_id)->orderBy('created_at', 'desc')->get();
-            return $books->toJson();
+            return $this -> returnData('books',$books);
+        }
+            */
+
+        //--------------------------------------------------------------------------------
+
+        public function showByName($name){
+            $books = Book::where('title', $name)->orderBy('created_at', 'desc')->get();
+            return $this -> returnData('books',$books);
         }
     
 

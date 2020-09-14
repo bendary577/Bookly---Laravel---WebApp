@@ -23,10 +23,12 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware'=> ['api'], 'namespace'=>'Api'], function(){
     Route::prefix('books')->group(function(){  
         Route::get('/', 'BookController@index');
-        //http get. to retrieve books by id and category
-        Route::get('/{id}', 'BookController@show');
+        //http get. to retrieve books by id, category and name
+        Route::get('/{id}', 'BookController@showByID');
         // http://127.0.0.1:8000/api/v1/books?category=history
         Route::get('/{category}', 'BookController@showByCategory');
+         // http://127.0.0.1:8000/api/v1/books?name=mybook
+        Route::get('/{name}', 'BookController@showByName');
          //http post to insert a book
          // http://127.0.0.1:8000/api/v1/book?title='first book' .... 
         Route::post('book', 'BookController@store');
@@ -36,6 +38,14 @@ Route::group(['middleware'=> ['api'], 'namespace'=>'Api'], function(){
         Route::post('update/{id}', 'BookController@update');
         //instead of http delete
         Route::get('delete/{id}', 'BookController@delete');
+    });
+
+    Route::prefix('categories')->group(function(){  
+        Route::get('/', 'CategoriesController@index');
+        //http get. to retrieve books by id, category and name
+        Route::get('/{id}', 'CategoriesController@showByID');
+         // http://127.0.0.1:8000/api/v1/books?name=mybook
+        Route::get('/{name}', 'CategoriesController@showByName');
     });
 });
 

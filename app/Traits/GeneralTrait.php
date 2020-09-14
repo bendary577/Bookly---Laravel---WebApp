@@ -7,6 +7,20 @@ trait GeneralTrait
 {
 
 //---------------------------------------------------------------------------------------
+    
+    public function returnData($key, $value)
+    {
+        $count = count($value);
+        $msg = $count . ' items matched your search results';
+        return response()->json([
+            'status' => true,
+            'errNum' => "S000",
+            'msg' => $msg,
+            'key' =>  $value
+        ]);
+    }
+
+//---------------------------------------------------------------------------------------
 
     public function returnError($msg, $errNum= "S000")
     {
@@ -31,18 +45,6 @@ trait GeneralTrait
             'errNum' => $errNum,
             'msg' => $msg
         ];
-    }
-
-//---------------------------------------------------------------------------------------
-    
-    public function returnData($key, $value, $msg = "")
-    {
-        return response()->json([
-            'status' => true,
-            'errNum' => "S000",
-            'msg' => $msg,
-            $key =>  $value
-        ]);
     }
 
 //---------------------------------------------------------------------------------------

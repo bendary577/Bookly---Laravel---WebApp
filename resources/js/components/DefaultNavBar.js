@@ -1,62 +1,72 @@
-import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "../../css/defaultnavbar.css";
 
 const DefaultNavbar = () => {
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light">
+            {/* ---------------------------- logo -----------------------------------------------------*/}
 
-    return(
-                
-                <nav className="navbar navbar-expand-md navbar-light bg-light sticky-top">
-                    <div className="container">
-                        <div className="row">
+            <Link className="navbar-brand text-white" to="/">
+                <h2>Bookly</h2>
+            </Link>
 
-                        {/* ---------------------------- logo -----------------------------------------------------*/}
+            {/* ---------------------------- toggler collapsing button -----------------------------------------------------*/}
 
-                        <div className="col-sm-12 col-md-3 col-lg-1 col-xl-1">
-                            <Link className="navbar-brand font-weight-bold text-lg-left" to="/">Bookly</Link>
-                        </div>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapsibleNavbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        {/* ---------------------------- search bar -----------------------------------------------------*/}
+            {/* ---------------------------- links -----------------------------------------------------*/}
+            <div
+                class="collapse navbar-collapse d-flex justify-content-end pr-5"
+                id="collapsibleNavbar"
+            >
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to="#">
+                            about us
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to="#">
+                            contact us
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to="#">
+                            categories
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to="#">
+                            services
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to="#">
+                            privacy terms
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+            {/* ---------------------------- signup button -----------------------------------------------------*/}
 
-                        <div className="col-sm-12 col-md-9 col-lg-4 col-xl-6">
-                            <form className="form-inline w-30" action="">
-                                <input className="form-control mr-sm-2 w-65" type="search" placeholder="Search for a book" aria-label="Search" />
-                                <button className="btn btn-warning my-2 my-sm-0 mx-2" type="submit">Search</button>
-                            </form>
-                        </div>
+            <Link
+                className="btn btn-secondary btn-md btn-success active"
+                to="/signup"
+            >
+                Signup
+            </Link>
 
-                        {/* ----------------------------links -----------------------------------------------------*/}
-
-                        <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <ul className="navbar-nav mr-4 mt-2 mt-lg-0 w-30">
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="#">about us</Link>
-                                </li>
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="#">contact us</Link>
-                                </li>
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="#">categories</Link>
-                                </li>
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="#">services</Link>
-                                </li>
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="#">privacy terms</Link>
-                                </li>               
-                            </ul>
-                        </div>
-
-                        {/* ---------------------------- signup button -----------------------------------------------------*/}
-
-                        <div className="col-sm-12 col-md-12 col-lg-1 col-xl-1">
-                            <Link className="btn btn-secondary btn-lg active" to="/signup">Signup</Link>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
-        )
-    }
+            {/* ---------------------------- end navbar -----------------------------------------------------*/}
+        </nav>
+    );
+};
 
 export default DefaultNavbar;
